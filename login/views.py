@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, auth
 
 def login(request):
     if request.method == "GET":
-        return render(request,'Login.html')
+        return render(request,'login.html')
     else:
         email = request.POST['username']
         password = request.POST['password']
@@ -14,4 +14,4 @@ def login(request):
             auth.login(request,user)
             return HttpResponse("Hello"+user+"!!! You have successfully logged in!")
         else:
-            return render(request,'Login.html',{'status':"Incorrect Email or Password!"}) 
+            return render(request,'login.html',{'status':"Incorrect Email or Password!"}) 
