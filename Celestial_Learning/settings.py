@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Celestial_Learning.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +75,11 @@ WSGI_APPLICATION = 'Celestial_Learning.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db4lhopjsd3dof',
+        'USER': 'xcdmexyyureglg',
+        'PASSWORD': '01b3e6a4ab2b73d4611728d66b6bc05d9b98929d1ffcf09d756e6683b23f35ba',
+        'HOST':'ec2-34-195-115-225.compute-1.amazonaws.com',
     }
 }
 
