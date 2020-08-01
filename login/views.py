@@ -10,8 +10,9 @@ def login(request):
         password = request.POST['password']
 
         user = auth.authenticate(username=email,password=password)
+        us = str(user)
         if user is not None:
             auth.login(request,user)
-            return HttpResponse("Hello"+user+"!!! You have successfully logged in!")
+            return HttpResponse("Hello "+us+"!!! You have successfully logged in!")
         else:
             return render(request,'login.html',{'status':"Incorrect Email or Password!"}) 
