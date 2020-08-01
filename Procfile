@@ -1,1 +1,1 @@
-web: gunicorn newtest.wsgi
+web: gunicorn Celestial_Learning.wsgi
