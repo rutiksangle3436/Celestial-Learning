@@ -25,7 +25,7 @@ SECRET_KEY = 'oc5@(mcubucmvt+luk7hap!&frd7@s1&iw7kk$4rru*h6jz^w5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['celestial-learning.herokuapp.com','127.0.0.1']
 
 
 # Application definition
