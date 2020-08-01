@@ -6,10 +6,10 @@ def login(request):
     if request.method == "GET":
         return render(request,'login.html')
     else:
-        email = request.POST['username']
+        username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(username=email,password=password)
+        user = auth.authenticate(username=username,password=password)
         us = str(user)
         if user is not None:
             auth.login(request,user)
