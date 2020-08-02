@@ -7,3 +7,4 @@ whitenoise
 django-heroku
 gunicorn
 psycopg2-binary
+djangorestframework_simplejwt
