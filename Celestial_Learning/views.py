@@ -11,5 +11,6 @@ class TestToken(APIView):
     authentication_classes = (JWTAuthentication,)
 
     def post(self, request):
-        content = {'JWT': "is Working",}
+        username = request.user
+        content = {'Username': str(username)}
         return Response(content)
