@@ -18,7 +18,7 @@ def register(request):
         password = request.POST['password']
 
         if User.objects.filter(email=email).exists() :
-            return render(request,'register.html',{'status':"EMAIL ALREADY EXISTS"})    
+            return render(request,'index.html',{'status':"EMAIL ALREADY EXISTS"})    
         elif User.objects.filter(username=username).exists():
             return render(request,'register.html',{'status':"USERNAME ALREADY EXISTS"})    
 

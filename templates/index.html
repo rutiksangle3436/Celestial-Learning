@@ -98,8 +98,9 @@
 
                                 <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
                                     <form action="register/" method="post" class="form-box">
-                                        {% csrf_token %}
+                                        {% block content %} {% csrf_token %}
                                         <h3 class="h4 text-black mb-4">Sign Up</h3>
+                                        <p style="color:red">{{status}}</p>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Name" name="name" />
                                         </div>
@@ -115,6 +116,7 @@
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-pill" value="Sign up" />
                                         </div>
+                                        {% endblock %}
                                     </form>
                                 </div>
                             </div>
