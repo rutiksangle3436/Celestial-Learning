@@ -7,4 +7,5 @@ whitenoise
 django-heroku
 gunicorn
 psycopg2-binary
+django-crispy-forms
 djangorestframework_simplejwt

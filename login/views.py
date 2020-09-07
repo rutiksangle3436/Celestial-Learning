@@ -16,3 +16,8 @@ def login(request):
             return HttpResponse("Hello "+us+"!!! You have successfully logged in!")
         else:
             return render(request,'login.html',{'status':"Incorrect Email or Password!"}) 
+
+
+def forgetpass(request):
+    return HttpResponse("FORGET PASS PAGE!")
+    
