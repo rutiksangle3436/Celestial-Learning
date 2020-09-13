@@ -77,19 +77,26 @@
         }
     </style>
 </head>
-{% block content %}
 
 <body>
     <form onsubmit="return(validateForm())" action="" method="post">
         {% csrf_token %}
         <h1>Student Login</h1>
-        <h3>{{status}}</h3>
         <div class="formcontainer">
             <div class="container">
+                {% block content %} {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
+                {% endif %} {% if next %} {% if user.is_authenticated %}
+                <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+                {% else %}
+                <p>Please login to see this page.</p>
+                {% endif %} {% endif %}
+                <h3>{{status}}</h3>
                 <label for="mail"><strong>UserName</strong></label>
                 <input type="text" placeholder="Enter Username" name="username">
                 <label for="password"><strong>Password</strong></label>
                 <input type="password" placeholder="Enter Password" name="password">
+                <a href="/password_reset/"> Forgot Password?</a>
             </div>
             <button type="submit">Login </button>
         </div>
