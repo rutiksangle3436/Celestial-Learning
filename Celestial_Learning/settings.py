@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
@@ -178,3 +178,18 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'celestial.learning.help@gmail.com'
 EMAIL_HOST_PASSWORD = 'Celestial@123'
+
+#AWS S3 bucket settings
+
+AWS_STORAGE_BUCKET_NAME = 'celestiallearning'
+AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
+AWS_LOCATION = 'static'
+STATIC_URL = 'https://{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+AWS_ACCESS_KEY_ID = 'AKIAW6CEYUOSVRMX7452'
+AWS_SECRET_ACCESS_KEY = '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'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None

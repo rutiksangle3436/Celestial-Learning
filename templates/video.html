@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos Demo</title>
+</head>
+<body>
+    <h1>Straight from AWS S3 bucket</h1>
+    {% for video in videos %}
+    <h2>{{ video }}</h2>
+     <video width="880" height="520" controls>
+  <source src="https://celestiallearning.s3.ap-south-1.amazonaws.com/Testing/{{ video }}.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+    </video>
+     {% endfor %}
+</body>
+</html>
